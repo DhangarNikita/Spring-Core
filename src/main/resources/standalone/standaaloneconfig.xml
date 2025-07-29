@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util
+           https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:list list-class="java.util.ArrayList" id="list">
+        <value>Nikita</value>
+        <value>Sneha</value>
+        <value>Ruchita</value>
+        <value>Trisha</value>
+    </util:list>
+
+    <util:map map-class="java.util.HashMap" id="map">
+        <entry key="Java" value="1.5 months"/>
+        <entry key="Python" value="2 months"/>
+        <entry key="c" value="3 months"/>
+        <entry key="c++" value="2 months"/>
+    </util:map>
+
+    <bean class="com.standalone.Collection" name="collection1">
+        <property name="name" ref="list"/>
+        <property name="course" ref="map"/>
+    </bean>
+
+    <bean class="com.standalone.Collection" name="collection2">
+        <property name="name" ref="list"/>
+        <property name="course" ref="map"/>
+    </bean>
+
+
+</beans>
